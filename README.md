@@ -20,3 +20,13 @@ the fields, and if I think of new fields later, it'll be easy to add them.
 
 
 ## database
+* mongo libs
+* get basics down
+* need a menu
+* user
+  * need a create screen
+  * need to alter for edit capability
+  * need a delete option with extra confirmations
+* song
+  * need create/edit/delete
+
