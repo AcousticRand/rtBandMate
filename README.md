@@ -1,5 +1,7 @@
 # rtBandMate
 
+[ ![Codeship Status for AcousticRand/rtBandMate](https://app.codeship.com/projects/64ed4cf0-4758-0132-a4ad-1e5414ff1fe0/status?branch=master)](https://app.codeship.com/projects/45590)
+
 Lyrics - tabs repository software for band members
 
 Plan:
