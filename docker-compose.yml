@@ -1,6 +1,13 @@
 version: "3"
-services:
 
+networks:
+  default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.0.0/16
+services:
   mongo:
     image: mongo
     restart: always
@@ -18,6 +25,17 @@ services:
 #    environment:
 #      ME_CONFIG_MONGODB_ADMINUSERNAME: root
 #      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+
+  web:
+    image: webdevops/apache:latest
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./:/app
+    environment:
+      WEB_DOCUMENT_ROOT: /app/public
+      WEB_PHP_SOCKET: "php:9000"
 
   php:
     image: webdevops/php-dev:7.2
