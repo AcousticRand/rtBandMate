@@ -27,7 +27,7 @@ services:
 #      ME_CONFIG_MONGODB_ADMINPASSWORD: example
 
   web:
-    image: webdevops/apache:latest
+    image: webdevops/php-apache:ubuntu-18.04
     ports:
       - 80:80
       - 443:443
@@ -35,11 +35,3 @@ services:
       - ./:/app
     environment:
       WEB_DOCUMENT_ROOT: /app/public
-      WEB_PHP_SOCKET: "php:9000"
-
-  php:
-    image: webdevops/php-dev:7.2
-    ports:
-      - 9000:9000
-    volumes:
-      - ./:/app
