@@ -12,16 +12,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class AboutController extends AbstractController
+class MainController extends AbstractController
 {
      /**
-      * @Route("/about/me", name="aboutme")
+      * @Route("/")
       */
-    public function me()
+    public function index()
     {
-        return $this->render('about/me.html.twig', [
-           'name' => 'Rand Thacker',
-           'profession' => 'Manager of Application Engineering Services',
+        return $this->render('index/index.html.twig', [
+            'name' => 'Rand',
         ]);
     }
 }

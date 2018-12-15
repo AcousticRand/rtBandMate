@@ -11,6 +11,8 @@ services:
   mongo:
     image: mongo
     restart: always
+    volumes:
+      - db-data:/data/db
     ports:
       - 27017:27017
 #    environment:
@@ -35,3 +37,6 @@ services:
       - ./:/app
     environment:
       WEB_DOCUMENT_ROOT: /app/public
+
+volumes:
+  db-data:
