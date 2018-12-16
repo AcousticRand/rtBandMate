@@ -29,14 +29,19 @@ services:
 #      ME_CONFIG_MONGODB_ADMINPASSWORD: example
 
   web:
-    image: webdevops/php-apache:ubuntu-18.04
+    image: webdevops/php-apache-dev:7.2
     ports:
       - 80:80
       - 443:443
+      - 9000:9000
     volumes:
       - ./:/app
     environment:
       WEB_DOCUMENT_ROOT: /app/public
+      XDEBUG_REMOTE_HOST: "172.16.0.1"
+      XDEBUG_REMOTE_PORT: 9000
+      XDEBUG_REMOTE_AUTOSTART: 1
+      XDEBUG_REMOTE_CONNECT_BACK: 1
 
 volumes:
   db-data:

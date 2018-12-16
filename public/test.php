@@ -7,7 +7,7 @@
  */
 
 // This path should point to Composer's autoloader
-require 'vendor/autoload.php';
+require dirname(__DIR__).'/vendor/autoload.php';
 
 use MongoDB\Client as Mongo;
 
@@ -21,12 +21,12 @@ $client = new Mongo($connect_string);
  * @var MongoCollection
  */
 $collection = $client->{$database_info['database']}->{$database_info['collection']};
-/* HOW TO INSERT
+/* HOW TO INSERT */
 $result = $collection->insertOne( [ 'first_name' => 'Rand', 'last_name' => 'Thacker' ] );
 $result = $collection->insertOne( [ 'first_name' => 'Joel', 'last_name' => 'DeLuna' ] );
 $result = $collection->insertOne( [ 'first_name' => 'Tom', 'last_name' => 'Flygare' ] );
 $result = $collection->insertOne( [ 'first_name' => 'Jason', 'last_name' => 'Zenda' ] );
-*/
+/**/
 $result = $collection->find();
 
 foreach ($result as $entry) {

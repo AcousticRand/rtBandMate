@@ -1,8 +1,0 @@
-{% extends "base.html.twig" %}
-{% block body %}
-    <ul id="song_list">
-        {% for song in songlist %}
-            <li><a href="{{ path('song_edit') }}/{{ song._id }}">{{ song.title }}</a></li>
-        {% endfor %}
-    </ul>
-{% endblock %}
